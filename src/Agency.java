@@ -22,7 +22,48 @@ public class Agency
 		realEstateListingArray.add(other);
 		}		
 	}
-		
+	
+	public ArrayList<RealEstateListing> jurisdiction(String location){
+		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
+		for (int i = 0; i < 20; i++){
+			if (this.realEstateListingArray.get(i).getStyle().equalsIgnoreCase(location)){
+				ans.add(this.realEstateListingArray.get(i));
+			}
+		}
+		return  ans;
+	}	
+	public ArrayList<RealEstateListing> distance(int distanceRange){
+		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
+		switch (distanceRange){
+		case 1: 
+			for (int i = 0; i < 20; i++){
+				if (this.realEstateListingArray.get(i).getDistance() < 5)			
+					ans.add(this.realEstateListingArray.get(i));
+			}
+			break;
+		case 2:
+			for (int i = 0; i < 20; i++){
+				if ((this.realEstateListingArray.get(i).getDistance() >= 5) &&(this.realEstateListingArray.get(i).getDistance() < 10))				
+					ans.add(this.realEstateListingArray.get(i));
+			}
+			break;
+		case 3: 
+			for (int i = 0; i < 20; i++){
+				if ((this.realEstateListingArray.get(i).getDistance() >= 10) &&(this.realEstateListingArray.get(i).getDistance() < 15))				
+					ans.add(this.realEstateListingArray.get(i));
+			}
+			break;
+	
+		case 4: 
+			for (int i = 0; i < 20; i++){
+				if (this.realEstateListingArray.get(i).getDistance() >= 15)			
+					ans.add(this.realEstateListingArray.get(i));
+			}
+			break;
+		default: break;
+		}
+		return ans;
+	}
 
 	public String toString(){
 		String ans = "";
