@@ -26,6 +26,26 @@ public class RealEstateAgent //*** this is the largest class
 		century21 = new Agency("Century 21","Century21.txt");
 	}
 	
+	private int pickHomeCriterion() {
+		printHomeCriterion();
+		int ans = scan.nextInt();
+		scan.nextLine();
+		return ans;
+	}
+
+	private void printHomeCriterion() {
+		System.out.println("Please choose a home criteria");
+		System.out.println("and enter its number.");
+		System.out.println("1) Style");
+		System.out.println("2) Number Of Bedrooms");
+		System.out.println("3) Number Of Bathrooms");
+		System.out.println("4) Lot Size");
+		System.out.println("5) Age");
+		System.out.println("6) Price");
+		System.out.println("7) Distance From Work");
+		System.out.println("8) Jurisdiction");
+	}
+	
 	public ArrayList<RealEstateListing> style(int styleType, ArrayList<Agency> agencyArray){
 		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
 		String homeType = "";
