@@ -25,7 +25,33 @@ public class RealEstateAgent //*** this is the largest class
 		longAndFoster = new Agency ("Long & Foster", "LongAndFoster.txt");
 		century21 = new Agency("Century 21","Century21.txt");
 	}
+	
+	public ArrayList<RealEstateListing> style(int styleType, ArrayList<Agency> agencyArray){
+		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
+		String homeType = "";
+		switch(styleType){
+		case 1: homeType = "Rambler"; break;
+		case 2: homeType = "Condominium"; break;
+		case 3: homeType = "Colonial"; break;
+		case 4: homeType = "Georgian"; break;
+		case 5: homeType = "Townhouse"; break;
+		case 6: homeType = "Split Level"; break;
+		case 7: homeType = "Cape Cod"; break;
+		default: break;
+		}
 
+		for (Agency agency : agencyArray){
+			//agency.toString();
+			ArrayList<RealEstateListing> temp = agency.style(homeType);
+			for (RealEstateListing other : temp){
+				ans.add(other);
+			}
+
+		}
+		return ans;
+		//*** ask each agency to give a list that satisfies the requested style.
+	}
+	
 	public ArrayList<RealEstateListing> age(int ageRange, ArrayList<Agency> agencyArray){
 		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
 		for (Agency agency : agencyArray){	
