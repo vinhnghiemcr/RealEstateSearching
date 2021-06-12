@@ -25,6 +25,21 @@ public class RealEstateAgent //*** this is the largest class
 		longAndFoster = new Agency ("Long & Foster", "LongAndFoster.txt");
 		century21 = new Agency("Century 21","Century21.txt");
 	}
+	private double getNumberOfLotSize() {
+		System.out.println("Please enter a number of lot size:");
+		double numberOfLotSize = scan.nextDouble();
+		return numberOfLotSize;
+	}
+	private double getNumberOfBathroom() {
+		System.out.println("Please choice a number of bathroom between 1 to 4:");
+		double numberOfBathroom = scan.nextDouble();
+		return numberOfBathroom;
+	}
+	private double getNumberOfBedroom() {
+		System.out.println("Please choice a number of bedrooms between 1 to 4:");
+		double numberOfBedroom = scan.nextDouble();
+		return numberOfBedroom;
+	}
 	
 	private int pickHomeCriterion() {
 		printHomeCriterion();
