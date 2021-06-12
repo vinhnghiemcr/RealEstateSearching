@@ -25,6 +25,29 @@ public class RealEstateAgent //*** this is the largest class
 		longAndFoster = new Agency ("Long & Foster", "LongAndFoster.txt");
 		century21 = new Agency("Century 21","Century21.txt");
 	}
+	private int getPriceRange() {
+		System.out.println("Please choose the price and enter its number.");
+		System.out.println("1) under 100 thousand");
+		System.out.println("2) 100 thousand to 150 thousand");
+		System.out.println("3) 150 thousand to 200 thousand");
+		System.out.println("4) 200 thousand to 300 thousand");
+		System.out.println("5) 300 thousand to 400 thousand");
+		System.out.println("6) over 400 thousand");
+		int priceRange = scan.nextInt();
+		scan.nextLine();
+		return priceRange;
+	}
+
+	private int getAge() {
+		System.out.println("Enter the age range of the house:");
+		System.out.println("1) 1 to 5 years old.");
+		System.out.println("2) 6 to 10 years old.");
+		System.out.println("3) 11 to 15 years old.");
+		System.out.println("4) Greater than 15 years old.");
+		int ageRange = scan.nextInt();
+		scan.nextLine();
+		return ageRange;
+	}
 	private double getNumberOfLotSize() {
 		System.out.println("Please enter a number of lot size:");
 		double numberOfLotSize = scan.nextDouble();
