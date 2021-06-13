@@ -37,6 +37,20 @@ public class RealEstateAgent //*** this is the largest class
 		return distanceRange;
 	}
 	
+	private int getJurisdiction() {
+		System.out.println("Please choice a jurisdiction");
+		System.out.println("and enter its number.");
+		System.out.println("1) District of Columbia");
+		System.out.println("2) Arlington");
+		System.out.println("3) Alexandria");
+		System.out.println("4) Falls Church");
+		System.out.println("5) Fairfax");
+		
+		int jurisdiction = scan.nextInt();
+		scan.nextLine();
+		return jurisdiction;
+	}
+	
 	private int getPriceRange() {
 		System.out.println("Please choose the price and enter its number.");
 		System.out.println("1) under 100 thousand");
