@@ -25,6 +25,18 @@ public class RealEstateAgent //*** this is the largest class
 		longAndFoster = new Agency ("Long & Foster", "LongAndFoster.txt");
 		century21 = new Agency("Century 21","Century21.txt");
 	}
+	
+	private int getDistanceRange() {
+		System.out.println("Please choose the distance and enter its number.");
+		System.out.println("1) under 5");
+		System.out.println("2) 5 to 10");
+		System.out.println("3) 10 to 15");
+		System.out.println("4) over 15");
+		int distanceRange = scan.nextInt();
+		scan.nextLine();
+		return distanceRange;
+	}
+	
 	private int getPriceRange() {
 		System.out.println("Please choose the price and enter its number.");
 		System.out.println("1) under 100 thousand");
