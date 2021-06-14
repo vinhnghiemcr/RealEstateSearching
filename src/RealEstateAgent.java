@@ -26,6 +26,59 @@ public class RealEstateAgent //*** this is the largest class
 		century21 = new Agency("Century 21","Century21.txt");
 	}
 	
+	public String listingsChosen(){
+		getAgenciesForTheExhibition();
+		int homeCriterion = pickHomeCriterion();
+		
+		switch (homeCriterion)
+		{
+		case 1:// Style
+			int style = getStyle();
+			finalArrayListOfRealEstateListings = style(style, agencyArray);
+			break;
+		case 2://number of bedrooms
+			double numberOfBed = getNumberOfBedroom();
+			finalArrayListOfRealEstateListings = bedroom(numberOfBed, agencyArray);
+			break;
+		case 3: //number of bathrooms
+			double numberOfBath = getNumberOfBathroom();
+			finalArrayListOfRealEstateListings = bathroom(numberOfBath, agencyArray);
+			break;
+		case 4: //number of lot size
+			double numberOfLotSize = getNumberOfLotSize();
+			finalArrayListOfRealEstateListings = bathroom(numberOfLotSize, agencyArray);
+			break;
+		case 5: //age
+			int ageRange = getAge();
+			finalArrayListOfRealEstateListings = age(ageRange, agencyArray);
+			break;
+		case 6: // price
+			int priceRange = getPriceRange();
+			finalArrayListOfRealEstateListings = price(priceRange, agencyArray);
+			break;
+		case 7: //Distance from work
+			int distanceRange = getDistanceRange();
+			finalArrayListOfRealEstateListings = distance(distanceRange, agencyArray);
+			break;
+		case 8: //Jurisdiction
+			int jurisdiction = getJurisdiction();
+			finalArrayListOfRealEstateListings = jurisdiction(jurisdiction, agencyArray);
+			break;
+		default:
+			System.out.println("bad topic Selection choice " + homeCriterion);
+			System.exit(0);
+		}
+		String ans = "";
+		
+		int i =1;
+		for (RealEstateListing other : finalArrayListOfRealEstateListings){
+			System.out.print(i + ") ");
+			System.out.println(other.toString() );
+			i++;
+		}
+		return ans;
+	}
+	
 	private int getDistanceRange() {
 		System.out.println("Please choose the distance and enter its number.");
 		System.out.println("1) under 5");
