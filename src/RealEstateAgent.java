@@ -79,6 +79,64 @@ public class RealEstateAgent //*** this is the largest class
 		return ans;
 	}
 	
+	private ArrayList<RealEstateListing> jurisdiction(int jurisdiction, ArrayList<Agency> agencyArray2) {
+		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
+		String location = "";
+		switch(jurisdiction){
+		case 1: location = "District of Columbia"; break;
+		case 2: location = "Arlington"; break;
+		case 3: location = "Alexandria"; break;
+		case 4: location = "Falls Church"; break;
+		case 5: location = "Fairfax"; break;
+		default: break;
+		}
+		for (Agency agency : agencyArray){
+			//agency.toString();
+			ArrayList<RealEstateListing> temp = agency.jurisdiction(location);
+			for (RealEstateListing other : temp){
+				ans.add(other);
+			}
+		}
+		return ans;
+	}
+	
+	private ArrayList<RealEstateListing> distance(int distanceRange, ArrayList<Agency> agencyArray2) {
+		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
+		for (Agency agency : agencyArray){	
+			ArrayList<RealEstateListing> temp = agency.distance(distanceRange);
+			for (RealEstateListing other : temp){
+				ans.add(other);
+			}
+		}
+		return ans;
+	}
+	
+	private ArrayList<RealEstateListing> price(int priceRange, ArrayList<Agency> agencyArray2) {
+		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
+		for (Agency agency : agencyArray){	
+			ArrayList<RealEstateListing> temp = agency.price(priceRange);
+			for (RealEstateListing other : temp){
+				ans.add(other);
+			}
+		}
+		return ans;
+	}
+	
+	public int getStyle(){
+		System.out.println("Please choice a style");
+		System.out.println("and enter its number.");
+		System.out.println("1) Rambler");
+		System.out.println("2) Condominium");
+		System.out.println("3) Colonial");
+		System.out.println("4) Georgian");
+		System.out.println("5) Townhouse");
+		System.out.println("6) Split Level");
+		System.out.println("7) Cape Cod");
+		int style = scan.nextInt();
+		scan.nextLine();
+		return style;	
+	}
+
 	private int getDistanceRange() {
 		System.out.println("Please choose the distance and enter its number.");
 		System.out.println("1) under 5");
@@ -89,6 +147,8 @@ public class RealEstateAgent //*** this is the largest class
 		scan.nextLine();
 		return distanceRange;
 	}
+	
+	
 	
 	private int getJurisdiction() {
 		System.out.println("Please choice a jurisdiction");
@@ -103,6 +163,7 @@ public class RealEstateAgent //*** this is the largest class
 		scan.nextLine();
 		return jurisdiction;
 	}
+	
 	
 	private int getPriceRange() {
 		System.out.println("Please choose the price and enter its number.");
@@ -199,7 +260,38 @@ public class RealEstateAgent //*** this is the largest class
 		}
 		return ans;
 	}
+	
+	public ArrayList<RealEstateListing> lotSize(double numberOfLotSize, ArrayList<Agency> agencyArray) {
+		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
+		for(Agency agency :agencyArray ){
+			ArrayList<RealEstateListing> temp = agency.lotSize(numberOfLotSize);
+			for (RealEstateListing other : temp){
+				ans.add(other);
+			}
+		}
+		return ans;
+	}
+	private ArrayList<RealEstateListing> bathroom(double numberOfBath, ArrayList<Agency> agencyArray2) {
+		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
+		for(Agency agency :agencyArray ){
+			ArrayList<RealEstateListing> temp = agency.bedroom(numberOfBath);
+			for (RealEstateListing other : temp){
+				ans.add(other);
+			}
+		}
+		return ans;
+	}
 
+	public ArrayList<RealEstateListing> bedroom(double numberOfBed, ArrayList<Agency> agencyArray) {
+		ArrayList<RealEstateListing> ans = new ArrayList<RealEstateListing>();
+		for(Agency agency :agencyArray ){
+			ArrayList<RealEstateListing> temp = agency.bedroom(numberOfBed);
+			for (RealEstateListing other : temp){
+				ans.add(other);
+			}
+		}
+		return ans;
+	}
 
 	private void getAgenciesForTheExhibition() {
 		printAgencyList();
