@@ -2,37 +2,7 @@ import java.util.Scanner;
 import java.io.*;
 public class TextFileIO
 {
-	public static void main(String[] args)
-	{
-		String fileName = "textFile2.txt";
-		String line = null;
-		int count;
-		Scanner scan = new  Scanner(System.in);
-		PrintWriter textStream = TextFileIO.createTextWrite(fileName);
-		System.out.println("Enter 4 lines of text:");
-		for (count = 1; count <= 4; count++)
-		{
-			line = scan.nextLine();
-			textStream.println(count + " " + line);
-		}
-		scan.close();
-		textStream.close( ); // did not require error handling
-		System.out.println("Those lines were written to " + fileName);
-		System.out.println();
-		System.out.print("Now we will read them from " + fileName + " using the ");
-		System.out.println("Scanner class." );
-		Scanner scanFile = TextFileIO.createTextRead(fileName);// scan a file
-		for (count = 1; count <= 4; count++)
-		{
-			count = scanFile.nextInt();
-			line = scanFile.nextLine();
-			System.out.println(count + line);
-		}
-		scanFile.close();
-		
-
-	}
-
+	
 	public static PrintWriter  createTextWrite(String S)
 	{
 		PrintWriter TStream = null;
